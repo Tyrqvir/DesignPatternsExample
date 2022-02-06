@@ -1,0 +1,13 @@
+version: '3.9'
+
+services:
+    app:
+        restart: always
+        container_name: app
+        build:
+            context: docker/php
+        working_dir: /var/www/html/app
+        ports:
+            - '8881:8000'
+        volumes:
+            - ./shared/app:/var/www/html/app
